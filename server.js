@@ -11,10 +11,13 @@ server.use( '/message', function (req, res, next) {
   switchWords = req.body.message
     .replace( 'selfie', 'self-portrait' )
     .replace( 'yummers', 'delicious')
-    .replace( '', '')
-    .replace( '', '')
-    .replace( '', '')
-    .replace( '', '');
+    .replace( 'outchea', 'are out here')
+    .replace( 'bruh', 'wow')
+    .replace( 'doge', 'pug')
+    .replace( 'cilantro', 'soap')
+    .replace( 'bae', 'loved one')
+    .replace( 'swag', 'style')
+    .replace( 'yolo', 'carpe diem');
 
   next();
 });
