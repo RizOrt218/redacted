@@ -6,7 +6,7 @@ var switchWords = '';
 server.use( express.static( 'public' ));
 server.use( bodyParser.json({ type: 'application/json' }) );
 
-server.use( '/message', function (req, res, next) {
+function switcher (req, res, next) {
   //switch words
   switchWords = req.body.message
     .replace( 'selfie', 'self-portrait' )
@@ -20,7 +20,8 @@ server.use( '/message', function (req, res, next) {
     .replace( 'yolo', 'carpe diem');
 
   next();
-});
+}
+server.use( switcher );
 
 server.get('/', function (req, res) {
   res.render( './index.html' );
