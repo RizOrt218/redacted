@@ -36,7 +36,7 @@ function zeSwitch (req, res, next) {
   }
   next();
 }
-server.use( zeSwitch );
+server.use('/message', zeSwitch );
 
 server.get('/', function (req, res) {
   res.render( './index.html' );
